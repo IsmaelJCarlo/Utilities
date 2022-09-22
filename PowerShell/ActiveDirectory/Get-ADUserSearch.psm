@@ -1,0 +1,1 @@
+Get-ADUser -LDAPFilter "(& (samaccountname=srv_an*))" -properties description, ExtensionAttribute12, ExtensionAttribute4, Description, manager, passwordlastset, passwordneverexpires
