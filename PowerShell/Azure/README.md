@@ -1,3 +1,3 @@
 # Azure-Posh
 
-Just a repo with some simple Azure PowerShell scripts.
+Simple Azure related PowerShell scripts.
