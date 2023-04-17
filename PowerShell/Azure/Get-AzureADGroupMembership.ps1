@@ -16,7 +16,8 @@
 [CmdletBinding()]
 param(
   [Parameter(Mandatory,ParameterSetName='ByObjectId')]
-  [string]$ObjectId)
+  [string]$ObjectId
+)
 
 $logfilePrefix = "AzureADGroupMembers"
 
