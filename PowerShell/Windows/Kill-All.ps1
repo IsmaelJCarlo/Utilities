@@ -6,7 +6,7 @@ param(
 
 function Kill-All {
   Write-Host -BackgroundColor Yellow -ForegroundColor Red "Process to kill: $ProcessName"  
-  Get-Process | Where-Object -FilterScript {$_.processname -eq $ProcessName} | Select-Object id | Kill-All
+  Get-Process | Where-Object -FilterScript {$_.processname -eq $ProcessName} | Select-Object id | Stop-Process
  }
 
 Kill-All -ProcessName $processName
