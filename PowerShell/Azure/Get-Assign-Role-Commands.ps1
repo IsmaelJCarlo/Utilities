@@ -65,11 +65,23 @@ foreach ($row in $csvData) {
         # Get the management group ID
         $managementGroupId = $(Get-AzManagementgroup | where {$_.displayname -eq $roleScope}).id
 
+        # Assign command syntax for assigning role to management group
+        $RoleAssignmentCommand = "New-AzRoleAssignment `
+        -ObjectId $objectId `
+        -RoleDefinitionName `"$(($roleDefinition))`" `
+        -Scope $managementGroupId `
+        -Verbose"
+        
         # Output command syntax for assigning role to management group
-        Write-Output "New-AzRoleAssignment `
-            -ObjectId $objectId `
-            -RoleDefinitionName `"$(($roleDefinition))`" `
-            -Scope $managementGroupId `
-            -Verbose"
+        Write-Output $RoleAssignmentCommand
+        
+        
+        # Write-Output "New-AzRoleAssignment `
+        #     -ObjectId $objectId `
+        #     -RoleDefinitionName `"$(($roleDefinition))`" `
+        #     -Scope $managementGroupId `
+        #     -Verbose"
+
+
     }
 }
